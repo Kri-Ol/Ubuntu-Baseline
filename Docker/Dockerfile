@@ -12,6 +12,7 @@ RUN apt-get update && \
     apt-get install -y xz-utils && \
     apt-get install -y wget && \
     apt-get install -y wput && \
+    apt-get install -y nano && \
     apt-get autoremove; apt-get clean; apt-get autoclean
     
 RUN apt-get install -y qt4-default && \
