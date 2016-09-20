@@ -1,5 +1,5 @@
 # Docker to build baseline to make other images to run dose calc remotely
-FROM ubuntu:15.04
+FROM ubuntu:16.04
 MAINTAINER O.K. <https://github.com/Kri-Ol/Ubuntu-Baseline>
 
 # commands and configuration
@@ -22,4 +22,3 @@ RUN apt-get install -y qt4-default && \
 
 # make home dir
 RUN mkdir -p /home/beamuser
-
