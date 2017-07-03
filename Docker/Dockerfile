@@ -2,22 +2,28 @@
 FROM ubuntu:16.04
 MAINTAINER O.K. <https://github.com/Kri-Ol/Ubuntu-Baseline>
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # commands and configuration
 RUN apt-get update && \
-    apt-get install -y python-numpy && \
-    apt-get install -y python-paramiko && \
-    apt-get install -y net-tools && \
-    apt-get install -y sshpass && \
-    apt-get install -y iputils-ping && \
-    apt-get install -y xz-utils && \
-    apt-get install -y wget && \
-    apt-get install -y wput && \
-    apt-get install -y nano && \
+    apt-get install -y --no-install-recommends apt-utils && \
+    apt-get autoremove; apt-get autoclean; apt-get clean
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends python-numpy && \
+    apt-get install -y --no-install-recommends python-paramiko && \
+    apt-get install -y --no-install-recommends net-tools && \
+    apt-get install -y --no-install-recommends sshpass && \
+    apt-get install -y --no-install-recommends iputils-ping && \
+    apt-get install -y --no-install-recommends xz-utils && \
+    apt-get install -y --no-install-recommends wget && \
+    apt-get install -y --no-install-recommends wput && \
+    apt-get install -y --no-install-recommends nano && \
     apt-get autoremove; apt-get clean; apt-get autoclean
     
-RUN apt-get install -y qt4-default && \
-    apt-get install -y mesa-utils && \
-    apt-get install -y libxerces-c3.1 && \
+RUN apt-get install -y --no-install-recommends qt4-default && \
+    apt-get install -y --no-install-recommends mesa-utils && \
+    apt-get install -y --no-install-recommends libxerces-c3.1 && \
     apt-get autoremove; apt-get clean; apt-get autoclean    
 
 # make home dir
