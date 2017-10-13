@@ -20,11 +20,12 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends wput && \
     apt-get install -y --no-install-recommends nano && \
     apt-get autoremove; apt-get clean; apt-get autoclean
-    
+
 RUN apt-get install -y --no-install-recommends qt4-default && \
+    apt-get install -y --no-install-recommends libqt4-opengl && \
     apt-get install -y --no-install-recommends mesa-utils && \
     apt-get install -y --no-install-recommends libxerces-c3.1 && \
-    apt-get autoremove; apt-get clean; apt-get autoclean    
+    apt-get autoremove; apt-get clean; apt-get autoclean
 
 # make home dir
 RUN mkdir -p /home/beamuser
