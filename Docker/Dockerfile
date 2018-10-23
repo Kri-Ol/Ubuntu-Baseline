@@ -25,7 +25,13 @@ RUN apt-get install -y --no-install-recommends qt4-default && \
     apt-get install -y --no-install-recommends mesa-utils && \
     apt-get install -y --no-install-recommends libxerces-c3.1 && \
     apt-get install -y --no-install-recommends openssh-client && \
+    apt-get install -y --no-install-recommends python-pip  && \
+    apt-get install -y --no-install-recommends python-setuptools && \
     apt-get autoremove; apt-get autoclean; apt-get clean
+
+RUN pip install --upgrade pip
+
+RUN pip install google-cloud-storage
 
 # make home dir
 RUN mkdir -p /home/beamuser
